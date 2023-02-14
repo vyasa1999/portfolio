@@ -2,6 +2,7 @@ import { useSpring, animated, config } from 'react-spring'
 import { TypeAnimation } from 'react-type-animation'
 import { useEffect } from 'react'
 
+
 import RoundImage from '../common/RoundImage'
 export default function Title() {
     const [{ x }, set] = useSpring(() => ({ x: 0 }));
@@ -50,6 +51,7 @@ export default function Title() {
                     top: -2vh;
                     position: relative;
                 }
+                
                 /* For extremely small screen devices (595px and below) */
                 @media only screen and (max-width: 595px) {
                     .imageHeaderContainer{
@@ -139,6 +141,7 @@ export default function Title() {
                 />
 
             </svg>
+
         </>
     )
 }

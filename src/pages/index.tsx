@@ -22,10 +22,10 @@ const theme = createTheme({
 const NavTimeline = styled(Timeline)<any>(({ theme }) => ({
   position: 'fixed',
   background: 'none',
-  zIndex: 100,
+  zIndex: 4,
   fontSize: '1rem',
   right: 0,
-  bottom: 0
+  bottom: '3rem',
 }));
 const NavTimelineItem = styled(TimelineItem)<any>(({ theme }) => ({
   width: '1px',

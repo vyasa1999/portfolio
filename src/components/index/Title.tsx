@@ -25,6 +25,8 @@ export default function Title() {
                     flex-direction: column;
                     justify-content: center;
                     font-family: monospace, sans-serif;
+                    z-index: 10;
+                    position: relative;
                 }
                 .text{
                     align-content: left;
@@ -38,6 +40,7 @@ export default function Title() {
                     left: 50%;
                     position: absolute;
                     margin-top: auto;
+                    z-index: 10;
                 }
                 .imageHeaderContainer{
                     flex-direction: row;
@@ -46,10 +49,12 @@ export default function Title() {
                     margin-right: auto;
                     width: 10%;
                     align-items: center;
+                    z-index: 10;
                 }
                 .wave{
                     top: -2vh;
                     position: relative;
+                    z-index: 10;
                 }
                 
                 /* For extremely small screen devices (595px and below) */

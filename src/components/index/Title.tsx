@@ -2,6 +2,7 @@ import { useSpring, animated, config } from 'react-spring'
 import { TypeAnimation } from 'react-type-animation'
 import { useEffect } from 'react'
 
+import RoundImage from '../common/RoundImage'
 export default function Title() {
     const [{ x }, set] = useSpring(() => ({ x: 0 }));
     useEffect(() => {
@@ -11,7 +12,6 @@ export default function Title() {
         let max: number = 0.8 * window.innerHeight;
         let fraction: number = window.scrollY / max;
         let percent: number = fraction * 100;
-        console.log(percent);
         set({ x: percent })
     }
     return (
@@ -29,44 +29,98 @@ export default function Title() {
                     align-content: left;
                     text-align: left;
                     background-color: #000;
-                    margin-left: auto;
-                    margin-right: auto;
                     padding-left: 1rem;
                     padding-right: 1rem;
+                    flex-direction: column;
+                    display: flex;
+                    margin-left: 1rem;
+                    left: 50%;
+                    position: absolute;
+                    margin-top: auto;
+                }
+                .imageHeaderContainer{
+                    flex-direction: row;
+                    display: flex;
+                    margin-left: auto;
+                    margin-right: auto;
+                    width: 10%;
+                    align-items: center;
                 }
                 .wave{
                     top: -2vh;
                     position: relative;
                 }
+                /* For extremely small screen devices (595px and below) */
+                @media only screen and (max-width: 595px) {
+                    .imageHeaderContainer{
+                        width: 50%;
+                    }
+                }
+
+                /* Small screen devices (600px and above) */
+                @media only screen and (min-width: 600px) {
+                    .imageHeaderContainer{
+                        width: 40%;
+                    }
+                }
+
+                /* Medium screen devices (768px and above) */
+                @media only screen and (min-width: 768px) {
+                    .imageHeaderContainer{
+                        width: 30%;
+                    }
+                }
+
+                /* Big screen devices (889px and above) */
+                @media only screen and (min-width: 889px) {
+                    .imageHeaderContainer{
+                        width: 20%;
+                    }
+                }
+
+                /* Extra big screen devices (1200px and above) */
+                @media only screen and (min-width: 1200px) {
+                    .imageHeaderContainer{
+                        width: 15%;
+                    }
+                }
+                @media only screen and (min-width: 1800px) {
+                    .imageHeaderContainer{
+                        width: 10%;
+                    }
+                }
                 `}
             </style>
             <div className='background'>
-                <div className='text'>
-                    <TypeAnimation
-                        sequence={[
-                            'Ash Vyas'
-                        ]}
-                        wrapper='h1'
-                        cursor={false}
-                        repeat={0}
-                    />
-                    <TypeAnimation
-                        sequence={[
-                            'Software Engineer',
-                            1000,
-                            'Front End Developer',
-                            1000,
-                            'Back End Developer',
-                            1000,
-                            'Full Stack Developer',
-                            1000,
-                            'Web Developer',
-                            1000
-                        ]}
-                        wrapper='h2'
-                        cursor={true}
-                        repeat={Infinity}
+                <div className='imageHeaderContainer'>
+                    <RoundImage path='/headshot.jpg' alt='Ash Vyas' />
+                    <div className='text'>
+                        <TypeAnimation
+                            sequence={[
+                                'Ash Vyas'
+                            ]}
+                            wrapper='h1'
+                            cursor={false}
+                            repeat={0}
                         />
+                        <TypeAnimation
+                            sequence={[
+                                'Software Engineer',
+                                1000,
+                                'Front End Developer',
+                                1000,
+                                'Back End Developer',
+                                1000,
+                                'Full Stack Developer',
+                                1000,
+                                'Web Developer',
+                                1000
+                            ]}
+                            wrapper='h2'
+                            cursor={true}
+                            repeat={Infinity}
+                        />
+                    </div>
                 </div>
             </div>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" className='wave'>

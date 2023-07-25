@@ -46,7 +46,8 @@ const Experiences: Experience[] = [
       'Building React SharePoint Framework solutions, used by thousands of employees',
       'Managing the public website, built on legacy .NET Framework, written in HTML, CSS, JavaScript and C#',
       'Writing SQL stored procedures and functions to analyze employee performance',
-      'Work in a fast-paced team environment requiring quick learning and problem-solving skills'
+      'Work in a fast-paced team environment requiring quick learning and problem-solving skills',
+      'Learn on the job -- I came in with zero experience in SharePoint, SQL or React and created meaningful solutions within the first two months'
     ],
     languages: [
       'C#',
@@ -68,8 +69,9 @@ const Experiences: Experience[] = [
     startDate: 'December 2020',
     endDate: 'Present',
     description: [
-      'Test',
-      'test2'
+      'Create features within a SCRUM workflow and deliver products on a sprint-basis',
+      'Work on a team of two developers to prioritize tasks and collaborate effectively',
+      'Meet frequently with the CEO to discuss product features and design in layman\'s terms',
     ],
     languages: [
       'C#',
@@ -80,6 +82,46 @@ const Experiences: Experience[] = [
       '.NET',
       'Blazor',
       'MVC'
+    ]
+  },
+  {
+    title: 'Research Assistant',
+    company: 'SmartSystemsLab - University of Florida',
+    location: 'Gainesville, FL',
+    startDate: 'January 2020',
+    endDate: 'December 2020',
+    description: [
+      'Build a Security Engine that can be implemented on many different IP\'s without major restructuring or redesign',
+      'Independently research different bus architectures such as AMBA CHI and AXI',
+      'Learn how to digest high level concepts without guidance from a teacher or other mentor'
+    ],
+    languages: [
+      'VHDL',
+    ],
+    technologies: [
+      'Vivado',
+      'Xilinx',
+      'FPGA'
+    ]
+  },
+  {
+    title: 'Prototyping Intern',
+    company: 'The Tech Toybox',
+    location: 'Gainesville, FL',
+    startDate: 'January 2019',
+    endDate: 'May 2019',
+    description: [
+      'Brainstorm and create prototypes for clients',
+      'Manufacturing and assembly of prototypes using 3D printers, laser cutters, and other tools',
+      'Learn how to use new tools and software quickly and efficiently'
+    ],
+    languages: [
+    ],
+    technologies: [
+      '3D Printing',
+      'Laser Cutting',
+      'Control Systems',
+      'Surface-Mount Soldering'
     ]
   }
 ]

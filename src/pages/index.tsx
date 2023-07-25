@@ -16,7 +16,7 @@ import Title from '@/components/index/Title'
 import { CurrentPage } from '@/types/CurrentPage'
 import Nav from '@/components/index/Nav'
 import { Experience } from '@/types/Experience'
-import Work from '@/components/index/Work'
+import Work from '@/components/index/work/Work'
 const inter = Inter({ subsets: ['latin'] })
 const theme = createTheme({
   typography: {
@@ -136,7 +136,6 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <Nav CurrentPage={CurrentPage} />
         <Title />
         <ThemeProvider theme={theme}>
           <Work experiences={Experiences} />

@@ -18,9 +18,9 @@ export default function Work({ experiences }: WorkProps) {
         <Grid container spacing={2} sx={{ ml: 2 }}>
             <Grid item xs={8} md={10}>
                 <Card>
-                    {experiences.map((experience) => {
+                    {experiences.map((experience, index) => {
                         return (
-                            <Accordion>
+                            <Accordion key={index}>
                                 <AccordionSummary
                                     expandIcon={<ExpandMoreIcon />}
                                     aria-controls={experience.title + '-content'}
@@ -37,22 +37,22 @@ export default function Work({ experiences }: WorkProps) {
                                 </AccordionSummary>
                                 <AccordionDetails>
                                     <Typography sx={{ mb: 1 }}>Languages:</Typography>
-                                    {experience.languages.map((language) => {
+                                    {experience.languages.map((language, key) => {
                                         return (
-                                            <Chip label={language} sx={{ mr: 1, mb: 1 }} />
+                                            <Chip key={key} label={language} sx={{ mr: 1, mb: 1 }} />
                                         )
                                     })}
                                     <Typography sx={{ mb: 1 }}>Technologies:</Typography>
-                                    {experience.technologies.map((technology) => {
+                                    {experience.technologies.map((technology, key) => {
                                         return (
-                                            <Chip label={technology} sx={{ mr: 1, mb: 1 }} />
+                                            <Chip key={key} label={technology} sx={{ mr: 1, mb: 1 }} />
                                         )
                                     })}
                                     <Typography sx={{ mb: 1 }}>Responsibilities:</Typography>
                                     <ul style={{marginLeft: '2rem'}}>
-                                        {experience.description.map((responsibility) => {
+                                        {experience.description.map((responsibility, key) => {
                                             return (
-                                                <li>
+                                                <li key={key}>
                                                     <Typography>
                                                         {responsibility}
                                                     </Typography>

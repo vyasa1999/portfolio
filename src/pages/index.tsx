@@ -3,7 +3,7 @@ import Image from 'next/image'
 import { Inter } from '@next/font/google'
 import styles from '@/styles/Home.module.css'
 
-import { createTheme, ThemeProvider } from '@mui/system'
+import { createTheme, ThemeProvider } from '@mui/material/styles'
 import { styled } from '@mui/material/styles';
 import Timeline from '@mui/lab/Timeline';
 import TimelineItem from '@mui/lab/TimelineItem';
@@ -13,69 +13,76 @@ import TimelineContent from '@mui/lab/TimelineContent';
 import TimelineDot from '@mui/lab/TimelineDot';
 
 import Title from '@/components/index/Title'
+import { CurrentPage } from '@/types/CurrentPage'
+import Nav from '@/components/index/Nav'
+import { Experience } from '@/types/Experience'
+import Work from '@/components/index/Work'
 const inter = Inter({ subsets: ['latin'] })
 const theme = createTheme({
   typography: {
     fontFamily: 'monospace',
   },
+  palette: {
+    primary: {
+      main: '#ff0088'
+    },
+    mode: 'dark'
+  }
 });
-const NavTimeline = styled(Timeline)<any>(({ theme }) => ({
-  position: 'fixed',
-  background: 'none',
-  zIndex: 4,
-  fontSize: '1rem',
-  right: 0,
-  bottom: '3rem',
-}));
-const NavTimelineItem = styled(TimelineItem)<any>(({ theme }) => ({
-  width: '1px',
-}));
-const NavTimelineContent = styled(TimelineContent)<any>(({ theme }) => ({
-  fontFamily: 'monospace',
-  fontSize: '.75rem',
-  overflowInline: 'visible',
-  whiteSpace: 'nowrap',
-  marginTop: '.25rem'
-}));
-function Nav() {
-  return (
-    <NavTimeline position="left">
-      <NavTimelineItem>
-        <TimelineSeparator>
-          <TimelineDot />
-          <TimelineConnector />
-        </TimelineSeparator>
-      </NavTimelineItem>
-      <NavTimelineItem>
-        <TimelineSeparator>
-          <TimelineDot />
-          <TimelineConnector />
-        </TimelineSeparator>
-        <NavTimelineContent>Languages</NavTimelineContent>
-      </NavTimelineItem>
-      <NavTimelineItem>
-        <TimelineSeparator>
-          <TimelineDot />
-          <TimelineConnector />
-        </TimelineSeparator>
-        <NavTimelineContent>Technologies</NavTimelineContent>
-      </NavTimelineItem>
-      <NavTimelineItem>
-        <TimelineSeparator>
-          <TimelineDot />
-          <TimelineConnector />
-        </TimelineSeparator>
-        <NavTimelineContent>Work Experience</NavTimelineContent>
-      </NavTimelineItem>
-      <NavTimelineItem>
-        <TimelineSeparator>
-          <TimelineDot />
-        </TimelineSeparator>
-        <NavTimelineContent>About Me</NavTimelineContent>
-      </NavTimelineItem>
-    </NavTimeline>
-  )
+const CurrentPage: CurrentPage = {
+  top: false,
+  education: false,
+  workExperience: false,
+  aboutMe: false
 }
+const Experiences: Experience[] = [
+  {
+    title: 'Full Stack Developer',
+    company: 'Positive Behavior Supports Corp.',
+    location: 'Stuart, FL',
+    startDate: 'August 2021',
+    endDate: 'Present',
+    description: [
+      'Building React SharePoint Framework solutions, used by thousands of employees',
+      'Managing the public website, built on legacy .NET Framework, written in HTML, CSS, JavaScript and C#',
+      'Writing SQL stored procedures and functions to analyze employee performance',
+      'Work in a fast-paced team environment requiring quick learning and problem-solving skills'
+    ],
+    languages: [
+      'C#',
+      'JavaScript',
+      'TypeScript',
+      'SQL',
+      'HTML'
+    ],
+    technologies: [
+      'React',
+      'SharePoint Framework',
+      '.NET'
+    ]
+  },
+  {
+    title: 'Web Developer',
+    company: 'Candle LLC',
+    location: 'Gainesville, FL',
+    startDate: 'December 2020',
+    endDate: 'Present',
+    description: [
+      'Test',
+      'test2'
+    ],
+    languages: [
+      'C#',
+      'JavaScript',
+      'HTML'
+    ],
+    technologies: [
+      '.NET',
+      'Blazor',
+      'MVC'
+    ]
+  }
+]
 export default function Home() {
 
   return (
@@ -87,8 +94,11 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <Nav />
+        <Nav CurrentPage={CurrentPage} />
         <Title />
+        <ThemeProvider theme={theme}>
+          <Work experiences={Experiences} />
+        </ThemeProvider>
         <div style={{ height: '100vh' }}></div>
       </main>
     </>

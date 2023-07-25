@@ -112,8 +112,6 @@ export default function Title() {
                         />
                         <TypeAnimation
                             sequence={[
-                                'Software Engineer',
-                                1000,
                                 'Front End Developer',
                                 1000,
                                 'Back End Developer',

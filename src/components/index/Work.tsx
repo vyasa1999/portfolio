@@ -6,7 +6,8 @@ import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import { ThemeProvider } from '@mui/material/styles';
+import { ThemeProvider, useTheme } from '@mui/material/styles';
+
 import { relative } from 'path';
 
 
@@ -15,10 +16,19 @@ interface WorkProps {
 }
 
 export default function Work({ experiences }: WorkProps) {
+    const theme = useTheme();
     return (
         <div style={{ zIndex: 50000, position: 'relative' }}>
-            <Grid container spacing={2} sx={{ ml: 2 }}>
-                <Grid item xs={8} md={10}>
+            <Grid container spacing={2} sx={{
+                [theme.breakpoints.up('md')]: {
+                    ml: '2rem'
+                },
+                [theme.breakpoints.down('md')]: {
+                    ml: 'auto',
+                    mr: 'auto'
+                }
+            }}>
+                <Grid item xs={11} md={10}>
                     <Card>
                         {experiences.map((experience, index) => {
                             return (

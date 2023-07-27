@@ -36,8 +36,8 @@ export default function Work({ experiences }: WorkProps) {
                                 justifyContent: 'space-between'
                             }}>
                                 <Typography variant={'h5'}>{experience.title}</Typography>
-                                <Typography variant={'h6'} sx={{ color: 'grey' }}>{experience.company}</Typography>
-                                <Typography sx={{ color: 'grey' }}>{experience.startDate} - {experience.endDate}</Typography>
+                                <Typography variant={'h6'} color='secondary'>{experience.company}</Typography>
+                                <Typography color='secondary'>{experience.startDate} - {experience.endDate}</Typography>
                             </Box>
                         </AccordionSummary>
                         <AccordionDetails>

@@ -29,6 +29,9 @@ const theme = createTheme({
     primary: {
       main: '#ff0088'
     },
+    secondary: {
+      main: '#808080'
+    },
     mode: 'dark'
   }
 });
@@ -130,13 +133,12 @@ const Experiences: Experience[] = [
 ]
 
 const Education: Education[] = [{
-  imagePath: '/uflogo.png',
   school: 'University of Florida',
   college: 'Herbert Wertheim College of Engineering',
   degree: 'Bachelor of Science in Computer Engineering',
   startDate: 'August 2017',
   endDate: 'August 2020',
-  gpa: "3.21",
+  gpa: "3.23",
   courses: ['Data Structures and Algorithms', 'Operating Systems', 'Digital Design', 'Fundamentals of Machine Learning', 'User Experience Design', 'Software Engineering', 'Digital Logic', 'Circuits']
 }];
 export default function Home() {

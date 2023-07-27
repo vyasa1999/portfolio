@@ -1,5 +1,4 @@
 export type Education = {
-    imagePath: string,
     school: string,
     college: string,
     degree: string,

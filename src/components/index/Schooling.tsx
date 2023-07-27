@@ -36,10 +36,10 @@ export default function Schooling({ education }: SchoolingProps) {
                             justifyContent: 'space-between',
                             mr: 2
                         }}>
-                            <Typography variant={'h6'} color='secondary'>
+                            <Typography variant={'h6'}>
                                 {school.degree}
                             </Typography>
-                            <Typography variant={'h6'} color='secondary'>
+                            <Typography variant={'h6'}>
                                 GPA: {school.gpa}
                             </Typography>
                             <Typography variant={'h6'} color='secondary'>

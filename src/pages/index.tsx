@@ -3,7 +3,8 @@ import Image from 'next/image'
 import { Inter } from '@next/font/google'
 import styles from '@/styles/Home.module.css'
 
-import { createTheme, ThemeProvider } from '@mui/material/styles'
+import { Grid } from '@mui/material';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { styled } from '@mui/material/styles';
 import Timeline from '@mui/lab/Timeline';
 import TimelineItem from '@mui/lab/TimelineItem';
@@ -17,6 +18,8 @@ import { CurrentPage } from '@/types/CurrentPage'
 import Nav from '@/components/index/Nav'
 import { Experience } from '@/types/Experience'
 import Work from '@/components/index/work/Work'
+import { Education } from '@/types/Education'
+import Schooling from '@/components/index/Schooling'
 const inter = Inter({ subsets: ['latin'] })
 const theme = createTheme({
   typography: {
@@ -125,6 +128,17 @@ const Experiences: Experience[] = [
     ]
   }
 ]
+
+const Education: Education[] = [{
+  imagePath: '/uflogo.png',
+  school: 'University of Florida',
+  college: 'Herbert Wertheim College of Engineering',
+  degree: 'Bachelor of Science in Computer Engineering',
+  startDate: 'August 2017',
+  endDate: 'August 2020',
+  gpa: "3.21",
+  courses: ['Data Structures and Algorithms', 'Operating Systems', 'Digital Design', 'Fundamentals of Machine Learning', 'User Experience Design', 'Software Engineering', 'Digital Logic', 'Circuits']
+}];
 export default function Home() {
 
   return (
@@ -138,7 +152,16 @@ export default function Home() {
       <main>
         <Title />
         <ThemeProvider theme={theme}>
-          <Work experiences={Experiences} />
+          <div style={{ width: '90%', marginLeft: 'auto', marginRight: 'auto' }}>
+            <Grid container spacing={2}>
+              <Grid item xs={12} md={12}>
+                <Work experiences={Experiences} />
+              </Grid>
+              <Grid item xs={12} md={6}>
+                <Schooling education={Education} />
+              </Grid>
+            </Grid>
+          </div>
         </ThemeProvider>
         <div style={{ height: '100vh' }}></div>
       </main>

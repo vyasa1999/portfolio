@@ -10,7 +10,7 @@ export default function Title() {
         window.addEventListener('scroll', handleScroll);
     })
     const handleScroll = (event: any) => {
-        let max: number = 0.8 * window.innerHeight;
+        let max: number = 0.4 * window.innerHeight;
         let fraction: number = window.scrollY / max;
         let percent: number = fraction * 100;
         set({ x: percent })
@@ -20,7 +20,7 @@ export default function Title() {
             <style jsx>{`
                 .background{
                     background-color: #ff0088;
-                    height: 80vh;
+                    height: 40vh;
                     display: flex;
                     flex-direction: column;
                     justify-content: center;

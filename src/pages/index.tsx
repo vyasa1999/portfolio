@@ -3,7 +3,7 @@ import Image from 'next/image'
 import { Inter } from '@next/font/google'
 import styles from '@/styles/Home.module.css'
 
-import { Grid } from '@mui/material';
+import { Grid, Box } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { styled } from '@mui/material/styles';
 import Timeline from '@mui/lab/Timeline';
@@ -20,6 +20,10 @@ import { Experience } from '@/types/Experience'
 import Work from '@/components/index/work/Work'
 import { Education } from '@/types/Education'
 import Schooling from '@/components/index/Schooling'
+import { Project } from '@/types/Project'
+import Projects from '@/components/index/project/Project';
+import { Interest } from '@/types/Interest'
+import AboutMe from '@/components/index/AboutMe';
 const inter = Inter({ subsets: ['latin'] })
 const theme = createTheme({
   typography: {
@@ -141,6 +145,45 @@ const Education: Education[] = [{
   gpa: "3.23",
   courses: ['Data Structures and Algorithms', 'Operating Systems', 'Digital Design', 'Fundamentals of Machine Learning', 'User Experience Design', 'Software Engineering', 'Digital Logic', 'Circuits']
 }];
+
+const Project: Project[] = [
+  {
+    name: 'This Website',
+    description: 'My personal website and portfolio to display my work and experience, deployed on Vercel.',
+    languages: ['TypeScript'],
+    technologies: ['Next.js', 'React', 'Material UI', 'Vercel'],
+    github: 'https://github.com/vyasa1999/portfolio'
+  },
+  {
+    name: 'Automatic Speech Recognition',
+    description: 'A speech recognition system that I trained using my own voice with a dataset of 100 words and 5 samples per word. Achieved a 93% accuracy on the test set.',
+    languages: ['Python'],
+    technologies: ['TensorFlow', 'Keras', 'Librosa', 'NumPy', 'Pandas', 'Matplotlib'],
+    github: 'https://github.com/vyasa1999/ASR'
+  },
+  {
+    name: 'Street Sign Detection',
+    description: 'A street sign detection cnn model created for \'Fundamentals of Machine Learning\' course. Achieved a 87% accuracy on the test set.',
+    languages: ['Python'],
+    technologies: ['PyTorch', 'NumPy', 'Pandas', 'Matplotlib'],
+    github: null
+  },
+  {
+    name: 'Emotion in Voice',
+    description: 'A emotion detection model created for \'Introduction to Machine Learning\' course. Achieved a 92% accuracy on the test set.',
+    languages: ['Python'],
+    technologies: ['TensorFlow', 'Keras', 'NumPy', 'Pandas', 'Matplotlib'],
+    github: null
+  }
+]
+const Interest: Interest = {
+  aboutMe: `I am a 24 year old Indian-American who's lived all around the world. My dad worked for the U.S. State Department so as a result I've lived in Manila, Philippines, Sarajevo, Bosnia and Herzegovina, and Tokyo, Japan. Everywhere I go I bring a piece of those cultures with me and I love to share my experiences with others. I currently live in Palm Beach Gardens, Florida, and take full advantage of my accessibility to water sports. I am currently working as a Full Stack Developer at Positive Behavior Supports Corp. I am passionate about learning new technologies and building meaningful solutions to real-world problems. I am a quick learner and I am always looking for new opportunities to grow and develop my skills.`,
+  hobbies: ['Snowboarding', 'Wakeboarding', 'Travelling', 'Muay Thai', 'Cooking', 'Playing Video Games', 'Building Models'],
+  interests: ['My Bearded Dragon named Yoshi', 'Anime', 'Computers', 'Machine Learning/Ai'],
+  linkedIn: 'https://www.linkedin.com/in/ash-vyas-098aa8178/'
+}
+
+
 export default function Home() {
 
   return (
@@ -161,6 +204,11 @@ export default function Home() {
               </Grid>
               <Grid item xs={12} md={6}>
                 <Schooling education={Education} />
+                <Box style={{ height: '1rem' }}></Box>
+                <AboutMe interest={Interest} />
+              </Grid>
+              <Grid item xs={12} md={6}>
+                <Projects projects={Project} />
               </Grid>
             </Grid>
           </div>

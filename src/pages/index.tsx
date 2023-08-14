@@ -53,11 +53,10 @@ const Experiences: Experience[] = [
     startDate: 'August 2021',
     endDate: 'Present',
     description: [
-      'Building React SharePoint Framework solutions, used by thousands of employees',
-      'Managing the public website, built on legacy .NET Framework, written in HTML, CSS, JavaScript and C#',
-      'Writing SQL stored procedures and functions to analyze employee performance',
-      'Work in a fast-paced team environment requiring quick learning and problem-solving skills',
-      'Learn on the job -- I came in with zero experience in SharePoint, SQL or React and created meaningful solutions within the first two months'
+      'Ideate and actualize React SharePoint Framework solutions used by thousands of employees.',
+      'Build and update the public website using .Net Framework, written in HTML, CSS, JS, and C#.',
+      'Utilize SQL to build stored procedures for both SharePoint and .Net solutions.',
+      'Recognized for maintaining productivity and efficiency in a fast-paced team environment demanding quick learning and problem-solving skills.',
     ],
     languages: [
       'C#',
@@ -79,9 +78,9 @@ const Experiences: Experience[] = [
     startDate: 'December 2020',
     endDate: 'Present',
     description: [
-      'Create features within a SCRUM workflow and deliver products on a sprint-basis',
-      'Work on a team of two developers to prioritize tasks and collaborate effectively',
-      'Meet frequently with the CEO to discuss product features and design in layman\'s terms',
+      'Employed the Scrum workflow to guide the creation of deliverables on a sprint basis.',
+      'Identified opportunities and strategies to improve web development proficiencies.',
+      'Facilitated the on-time completion of projects through team collaboration and stakeholder needs assessment.',
     ],
     languages: [
       'C#',
@@ -101,9 +100,9 @@ const Experiences: Experience[] = [
     startDate: 'January 2020',
     endDate: 'December 2020',
     description: [
-      'Build a Security Engine that can be implemented on many different IP\'s without major restructuring or redesign',
-      'Independently research different bus architectures such as AMBA CHI and AXI',
-      'Learn how to digest high level concepts without guidance from a teacher or other mentor'
+      'Produced a Security Engine for implementation on many different IPs without requiring restructuring or redesign',
+      'Demonstrated a deep understanding of different bus architectures such as AMBA CHI and AXI.',
+      'Engaged in continuous learning through self-teaching and independent research into various processor designs.'
     ],
     languages: [
       'VHDL',
@@ -121,9 +120,9 @@ const Experiences: Experience[] = [
     startDate: 'January 2019',
     endDate: 'May 2019',
     description: [
-      'Brainstorm and create prototypes for clients',
-      'Manufacturing and assembly of prototypes using 3D printers, laser cutters, and other tools',
-      'Learn how to use new tools and software quickly and efficiently'
+      'Translated clients’ ideas into designs and prototypes in a manufacturing lab environment.',
+      'Collaborated with groups ranging from 3 to 8 individuals in planning and executing projects.',
+      'Advanced skillset in surface-mount soldering, control systems, and the design process.'
     ],
     languages: [
     ],
@@ -142,7 +141,7 @@ const Education: Education[] = [{
   degree: 'Bachelor of Science in Computer Engineering',
   startDate: 'August 2017',
   endDate: 'August 2020',
-  gpa: "3.23",
+  gpa: "Cum Laude",
   courses: ['Data Structures and Algorithms', 'Operating Systems', 'Digital Design', 'Fundamentals of Machine Learning', 'User Experience Design', 'Software Engineering', 'Digital Logic', 'Circuits']
 }];
 

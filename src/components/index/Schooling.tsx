@@ -40,7 +40,7 @@ export default function Schooling({ education }: SchoolingProps) {
                                 {school.degree}
                             </Typography>
                             <Typography variant={'h6'}>
-                                GPA: {school.gpa}
+                                Graduated {school.gpa}
                             </Typography>
                             <Typography variant={'h6'} color='secondary'>
                                 {school.startDate} - {school.endDate}

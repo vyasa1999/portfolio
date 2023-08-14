@@ -2,7 +2,7 @@ import { useSpring, animated, config } from 'react-spring'
 import { TypeAnimation } from 'react-type-animation'
 import { useEffect } from 'react'
 
-
+import { Typography } from '@mui/material'
 import RoundImage from '../common/RoundImage'
 export default function Title() {
     const [{ x }, set] = useSpring(() => ({ x: 0 }));
@@ -41,6 +41,7 @@ export default function Title() {
                     position: absolute;
                     margin-top: auto;
                     z-index: 10;
+                    font-family: monospace, sans-serif;
                 }
                 .imageHeaderContainer{
                     flex-direction: row;
@@ -102,29 +103,12 @@ export default function Title() {
                 <div className='imageHeaderContainer'>
                     <RoundImage path='/headshot.jpg' alt='Ash Vyas' />
                     <div className='text'>
-                        <TypeAnimation
-                            sequence={[
-                                'Ash Vyas'
-                            ]}
-                            wrapper='h1'
-                            cursor={false}
-                            repeat={0}
-                        />
-                        <TypeAnimation
-                            sequence={[
-                                'Front End Developer',
-                                1000,
-                                'Back End Developer',
-                                1000,
-                                'Full Stack Developer',
-                                1000,
-                                'Web Developer',
-                                1000
-                            ]}
-                            wrapper='h2'
-                            cursor={true}
-                            repeat={Infinity}
-                        />
+                        <Typography variant='h5'>
+                            Ash Vyas
+                        </Typography>
+                        <Typography variant='h6'>
+                            Full Stack Developer
+                        </Typography>
                     </div>
                 </div>
             </div>
